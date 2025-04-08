@@ -12,20 +12,25 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+
+// CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
+
+// Socket.io configuration with CORS
 const io = socketIo(server, {
-  cors: {
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-  }
+  cors: corsOptions
 });
 
-// Middleware
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
 app.use(express.json());
 
 // Log all incoming requests for debugging
