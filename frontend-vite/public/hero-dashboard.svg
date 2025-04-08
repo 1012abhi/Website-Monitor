@@ -1,0 +1,204 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1976d2" />
+      <stop offset="100%" stop-color="#90CAF9" />
+    </linearGradient>
+    <linearGradient id="chartGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#90CAF9" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#90CAF9" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="barGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f48fb1" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#f48fb1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.2" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" rx="15" fill="#1E1E1E"/>
+  
+  <!-- Header -->
+  <rect x="30" y="30" width="740" height="60" rx="8" fill="#333333" filter="url(#shadow)"/>
+  <circle cx="60" cy="60" r="15" fill="#90CAF9">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <rect x="90" y="50" width="120" height="20" rx="4" fill="#555555"/>
+  <rect x="600" y="50" width="80" height="20" rx="4" fill="#555555"/>
+  <rect x="700" y="50" width="40" height="20" rx="4" fill="#555555"/>
+  
+  <!-- Dashboard Grid -->
+  <!-- Row 1 -->
+  <rect x="30" y="110" width="360" height="180" rx="8" fill="#2C2C2C" filter="url(#shadow)"/>
+  <rect x="410" y="110" width="360" height="180" rx="8" fill="#2C2C2C" filter="url(#shadow)"/>
+  
+  <!-- Row 2 -->
+  <rect x="30" y="310" width="233" height="180" rx="8" fill="#2C2C2C" filter="url(#shadow)"/>
+  <rect x="283" y="310" width="233" height="180" rx="8" fill="#2C2C2C" filter="url(#shadow)"/>
+  <rect x="536" y="310" width="234" height="180" rx="8" fill="#2C2C2C" filter="url(#shadow)"/>
+  
+  <!-- Chart Elements -->
+  <!-- Line Chart -->
+  <rect x="50" y="140" width="320" height="130" rx="4" fill="#333333"/>
+  <rect x="50" y="120" width="100" height="15" rx="2" fill="#555555"/>
+  
+  <!-- Line chart with animation -->
+  <defs>
+    <clipPath id="chartClip">
+      <rect x="70" y="140" width="280" height="90" />
+    </clipPath>
+  </defs>
+  
+  <!-- Area under the line -->
+  <path d="M70,230 L70,230 L110,190 L150,210 L190,160 L230,180 L270,150 L310,170 L350,130 L350,230 Z" 
+        fill="url(#chartGradient)" clip-path="url(#chartClip)">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- The line itself -->
+  <polyline points="70,230 110,190 150,210 190,160 230,180 270,150 310,170 350,130" 
+           stroke="#90CAF9" stroke-width="3" fill="none">
+    <animate attributeName="stroke-dasharray" from="600" to="0" dur="2.5s" />
+  </polyline>
+  
+  <!-- Data points -->
+  <circle cx="70" cy="230" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="110" cy="190" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.2s" />
+  </circle>
+  <circle cx="150" cy="210" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.4s" />
+  </circle>
+  <circle cx="190" cy="160" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.6s" />
+  </circle>
+  <circle cx="230" cy="180" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.8s" />
+  </circle>
+  <circle cx="270" cy="150" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="1s" />
+  </circle>
+  <circle cx="310" cy="170" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="1.2s" />
+  </circle>
+  <circle cx="350" cy="130" r="4" fill="#90CAF9">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="1.4s" />
+  </circle>
+  
+  <!-- Bar Chart -->
+  <rect x="430" y="140" width="320" height="130" rx="4" fill="#333333"/>
+  <rect x="430" y="120" width="100" height="15" rx="2" fill="#555555"/>
+  
+  <!-- Animated bars -->
+  <rect x="450" y="220" width="30" height="30" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="30" dur="1s" />
+    <animate attributeName="y" from="250" to="220" dur="1s" />
+  </rect>
+  <rect x="490" y="200" width="30" height="50" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="50" dur="1s" begin="0.1s" />
+    <animate attributeName="y" from="250" to="200" dur="1s" begin="0.1s" />
+  </rect>
+  <rect x="530" y="180" width="30" height="70" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="70" dur="1s" begin="0.2s" />
+    <animate attributeName="y" from="250" to="180" dur="1s" begin="0.2s" />
+  </rect>
+  <rect x="570" y="150" width="30" height="100" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="100" dur="1s" begin="0.3s" />
+    <animate attributeName="y" from="250" to="150" dur="1s" begin="0.3s" />
+  </rect>
+  <rect x="610" y="190" width="30" height="60" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="60" dur="1s" begin="0.4s" />
+    <animate attributeName="y" from="250" to="190" dur="1s" begin="0.4s" />
+  </rect>
+  <rect x="650" y="170" width="30" height="80" fill="url(#barGradient)">
+    <animate attributeName="height" from="0" to="80" dur="1s" begin="0.5s" />
+    <animate attributeName="y" from="250" to="170" dur="1s" begin="0.5s" />
+  </rect>
+  
+  <!-- Donut Chart -->
+  <rect x="50" y="340" width="193" height="130" rx="4" fill="#333333"/>
+  <rect x="50" y="320" width="100" height="15" rx="2" fill="#555555"/>
+  
+  <!-- Animated donut -->
+  <circle cx="146" cy="405" r="50" fill="transparent" stroke="#555555" stroke-width="20" />
+  
+  <path d="M 146 355 A 50 50 0 0 1 196 405 L 146 405 Z" fill="#f48fb1">
+    <animate attributeName="d" 
+             from="M 146 405 A 50 50 0 0 1 146 405 L 146 405 Z" 
+             to="M 146 355 A 50 50 0 0 1 196 405 L 146 405 Z" 
+             dur="1.5s" />
+  </path>
+  
+  <path d="M 146 355 A 50 50 0 0 0 96 405 L 146 405 Z" fill="#4CAF50">
+    <animate attributeName="d" 
+             from="M 146 405 A 50 50 0 0 0 146 405 L 146 405 Z" 
+             to="M 146 355 A 50 50 0 0 0 96 405 L 146 405 Z" 
+             dur="1.5s" />
+  </path>
+  
+  <circle cx="146" cy="405" r="30" fill="#1E1E1E" />
+  
+  <!-- Table -->
+  <rect x="303" y="340" width="193" height="130" rx="4" fill="#333333"/>
+  <rect x="303" y="320" width="100" height="15" rx="2" fill="#555555"/>
+  
+  <line x1="303" y1="370" x2="496" y2="370" stroke="#444" stroke-width="1">
+    <animate attributeName="stroke-dasharray" from="193" to="0" dur="1s" />
+  </line>
+  <line x1="303" y1="400" x2="496" y2="400" stroke="#444" stroke-width="1">
+    <animate attributeName="stroke-dasharray" from="193" to="0" dur="1s" begin="0.2s" />
+  </line>
+  <line x1="303" y1="430" x2="496" y2="430" stroke="#444" stroke-width="1">
+    <animate attributeName="stroke-dasharray" from="193" to="0" dur="1s" begin="0.4s" />
+  </line>
+  <line x1="303" y1="460" x2="496" y2="460" stroke="#444" stroke-width="1">
+    <animate attributeName="stroke-dasharray" from="193" to="0" dur="1s" begin="0.6s" />
+  </line>
+  <line x1="400" y1="340" x2="400" y2="470" stroke="#444" stroke-width="1">
+    <animate attributeName="stroke-dasharray" from="130" to="0" dur="1s" begin="0.8s" />
+  </line>
+  
+  <!-- Status Cards -->
+  <rect x="556" y="340" width="194" height="40" rx="4" fill="#333333">
+    <animate attributeName="width" from="0" to="194" dur="0.5s" />
+  </rect>
+  <rect x="556" y="390" width="194" height="40" rx="4" fill="#333333">
+    <animate attributeName="width" from="0" to="194" dur="0.5s" begin="0.2s" />
+  </rect>
+  <rect x="556" y="440" width="194" height="40" rx="4" fill="#333333">
+    <animate attributeName="width" from="0" to="194" dur="0.5s" begin="0.4s" />
+  </rect>
+  
+  <rect x="556" y="320" width="100" height="15" rx="2" fill="#555555"/>
+  
+  <circle cx="576" cy="360" r="10" fill="#4CAF50">
+    <animate attributeName="r" values="0;10" dur="0.5s" />
+  </circle>
+  <circle cx="576" cy="410" r="10" fill="#4CAF50">
+    <animate attributeName="r" values="0;10" dur="0.5s" begin="0.2s" />
+  </circle>
+  <circle cx="576" cy="460" r="10" fill="#F44336">
+    <animate attributeName="r" values="0;10" dur="0.5s" begin="0.4s" />
+  </circle>
+  
+  <rect x="596" y="355" width="100" height="10" rx="2" fill="#555555">
+    <animate attributeName="width" from="0" to="100" dur="0.5s" begin="0.1s" />
+  </rect>
+  <rect x="596" y="405" width="100" height="10" rx="2" fill="#555555">
+    <animate attributeName="width" from="0" to="100" dur="0.5s" begin="0.3s" />
+  </rect>
+  <rect x="596" y="455" width="100" height="10" rx="2" fill="#555555">
+    <animate attributeName="width" from="0" to="100" dur="0.5s" begin="0.5s" />
+  </rect>
+  
+  <!-- Sidebar Simulation -->
+  <rect x="10" y="520" width="780" height="60" rx="8" fill="#333333" filter="url(#shadow)"/>
+  <rect x="30" y="540" width="120" height="20" rx="4" fill="#555555"/>
+  <rect x="170" y="540" width="100" height="20" rx="4" fill="#555555"/>
+  <rect x="290" y="540" width="80" height="20" rx="4" fill="#555555"/>
+  <rect x="390" y="540" width="90" height="20" rx="4" fill="#555555"/>
+</svg> 
