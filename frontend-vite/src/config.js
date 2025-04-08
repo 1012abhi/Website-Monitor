@@ -1,5 +1,5 @@
 const config = {
-  API_URL: 'https://website-monitor-ah0y.onrender.com/api'
+  API_URL: import.meta.env.VITE_API_URL
 };
 
 export default config; 
