@@ -2,13 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+dotenv.config();
 const http = require('http');
 const socketIo = require('socket.io');
 const monitorService = require('./services/monitorService');
 const Website = require('./models/Website');
 
 // Load environment variables
-dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
